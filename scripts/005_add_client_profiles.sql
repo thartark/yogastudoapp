@@ -1,0 +1,20 @@
+-- Add client profile fields
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS phone TEXT;
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS date_of_birth DATE;
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS address TEXT;
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS city TEXT;
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS state TEXT;
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS zip_code TEXT;
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS emergency_contact_name TEXT;
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS emergency_contact_phone TEXT;
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS emergency_contact_relationship TEXT;
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS medical_conditions TEXT;
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS injuries TEXT;
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS medications TEXT;
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS allergies TEXT;
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS experience_level TEXT CHECK (experience_level IN ('beginner', 'intermediate', 'advanced'));
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS goals TEXT;
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS preferences TEXT;
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS notes TEXT;
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS waiver_signed BOOLEAN DEFAULT FALSE;
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS waiver_signed_at TIMESTAMPTZ;
